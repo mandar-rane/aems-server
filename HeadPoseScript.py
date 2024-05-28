@@ -16,8 +16,8 @@ drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
 desired_width = 640  # Set your desired width
 desired_height = 480  # Set your desired height
 
-# cap = cv2.VideoCapture("rtsp://192.168.1.10:5543/live/channel0")
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("rtsp://192.168.1.6:5543/live/channel0")
+# cap = cv2.VideoCapture(0)
 
 
 while cap.isOpened():
@@ -104,7 +104,7 @@ while cap.isOpened():
         sio.emit("update_variable", attentive_percentage) 
         sio.emit("attendance", total_people)
         
-        # time.sleep(0.05)
+        time.sleep(0.01)
         # Display the attentive percentage and the majority direction
         cv2.putText(image, f'Attentive: {attentive_percentage:.2f}%', (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         cv2.putText(image, f'Majority Direction: {majority_direction}', (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
