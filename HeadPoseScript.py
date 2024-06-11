@@ -9,14 +9,14 @@ sio = socketio.Client()
 sio.connect('http://localhost:3000')
 
 mp_face_mesh = mp.solutions.face_mesh
-face_mesh = mp_face_mesh.FaceMesh(min_detection_confidence=0.1, min_tracking_confidence=0.5,max_num_faces=2, static_image_mode=False)
+face_mesh = mp_face_mesh.FaceMesh(min_detection_confidence=0.1, min_tracking_confidence=0.5,max_num_faces=4, static_image_mode=False)
 mp_drawing = mp.solutions.drawing_utils
 drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
 
 desired_width = 640  # Set your desired width
 desired_height = 480  # Set your desired height
 
-cap = cv2.VideoCapture("rtsp://192.168.1.6:5543/live/channel0")
+cap = cv2.VideoCapture("rtsp://192.168.95.198:5543/live/channel0")
 # cap = cv2.VideoCapture(0)
 
 
